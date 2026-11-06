@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Orange ring cut by a straight cross into four quarters (style guide: Logo and app icon) -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="108" android:viewportHeight="108">
+    <group>
+        <clip-path android:pathData="M0,0 H50.76 V50.76 H0 Z M57.24,0 H108 V50.76 H57.24 Z M0,57.24 H50.76 V108 H0 Z M57.24,57.24 H108 V108 H57.24 Z" />
+        <path
+            android:pathData="M35.28,54 a18.72,18.72 0 1,0 37.44,0 a18.72,18.72 0 1,0 -37.44,0"
+            android:strokeColor="#FFFF6C10"
+            android:strokeWidth="11.52" />
+    </group>
+</vector>
