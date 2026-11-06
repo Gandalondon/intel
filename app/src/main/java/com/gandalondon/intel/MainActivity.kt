@@ -10,6 +10,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -132,7 +133,10 @@ private fun App(ctx: Context) {
         if (w != null && step < total) {
             Spacer(Modifier.padding(top = 16.dp))
             Box(
-                Modifier.fillMaxWidth().background(Orange).clickable { go(step + 1) }.padding(24.dp),
+                Modifier.fillMaxWidth().background(Orange)
+                    // No pressed effect: the screen changing is the feedback (style guide)
+                    .clickable(interactionSource = remember { MutableInteractionSource() }, indication = null) { go(step + 1) }
+                    .padding(horizontal = 24.dp, vertical = 16.dp),
                 contentAlignment = Alignment.Center
             ) {
                 Text("Continue", style = smallStyle.copy(color = OnOrange), textAlign = TextAlign.Center)
