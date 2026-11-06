@@ -7,7 +7,7 @@
 <!--
   Intel style guide (canonical). Documents the app as designed in the prototype, 6 November 2026.
   Every value here is the one the app uses; where there is no rule yet, it says so under "Gaps".
-  Works offline: Saira 500 is embedded.
+  Works offline: Saira is embedded.
   Built by tools/style-guide/make.py from tools/style-guide/template.html. Edit the template, then run the script.
 -->
 <style>
@@ -75,9 +75,9 @@ ul.plain li{margin:8px 0}
 /* replicas of the app (same values as the prototype) */
 .phone{width:300px;max-width:100%;padding:8px;background:#0A0A0A;border-radius:40px;box-shadow:0 0 0 2px var(--panel)}
 .scr{height:600px;border-radius:32px;background:var(--ground);padding:28px 18px 18px;display:flex;flex-direction:column;overflow:hidden;text-align:left}
-.scr .o{font:500 20px/28px var(--font);letter-spacing:-.01em;color:var(--orange);margin-bottom:8px}
-.scr .t{flex:1;font:500 36px/41px var(--font);letter-spacing:-.01em;text-wrap:pretty}
-.scr .go{background:var(--orange);color:var(--on-orange);font:500 20px/24px var(--font);letter-spacing:-.01em;text-align:center;padding:14px 20px}
+.scr .o{font:600 20px/28px var(--font);letter-spacing:-.01em;color:var(--orange);margin-bottom:8px}
+.scr .t{flex:1;font:400 36px/41px var(--font);letter-spacing:-.01em;text-wrap:pretty}
+.scr .go{background:var(--orange);color:var(--on-orange);font:600 20px/24px var(--font);letter-spacing:-.01em;text-align:center;padding:14px 20px}
 .scr.splash{align-items:center;justify-content:center}
 .scr.splash svg{width:120px;height:120px}
 .btn{width:320px;max-width:100%;background:var(--orange);color:var(--on-orange);font:500 24px/32px var(--font);letter-spacing:-.01em;text-align:center;padding:16px 24px}
@@ -111,7 +111,7 @@ ul.plain li{margin:8px 0}
     <tr><th>The app</th><td>Personal Android app, built from <code>Gandalondon/intel</code>. GitHub builds an APK on every push, which Obtainium installs. Same pipeline as Hugin.</td></tr>
     <tr><th>The content</th><td>One small file per week, rewritten from the week's guides and committed to the repo every Tuesday. The app reads it when it opens, so new tasks never need a new build.</td></tr>
     <tr><th>Source of truth</th><td>The live build wins over this guide. When they disagree, fix the guide.</td></tr>
-    <tr><th>House rules</th><td>UK English. No em dashes. No widows. Sentence case, never all caps. No eyebrows, labels or counters, except "Objective 1, 2, 3", which matches the game so the two can be checked side by side. One typeface, one text size. Spacing on the 8 px grid. £0 to run.</td></tr>
+    <tr><th>House rules</th><td>UK English. No em dashes. No widows. Sentence case, never all caps. No eyebrows, labels or counters, except "Objective 1, 2, 3", which matches the game so the two can be checked side by side. One typeface, one task size. Spacing on the 8 px grid. £0 to run.</td></tr>
     <tr><th>This file</th><td><code>docs/style-guide.html</code>, built by <code>tools/style-guide/make.py</code>. Opens straight in a browser, offline.</td></tr>
   </table>
 </section>
@@ -130,11 +130,11 @@ ul.plain li{margin:8px 0}
   <p class="note">Candidate: #EF8532, sampled from the game's Commendations screen, is softer and closer to the game's own UI. Not in use yet; see Gaps.</p>
 
   <h3 class="g-h3">Type</h3>
-  <p class="intro">Saira, weight 500, tracking −1%. Free (SIL Open Font Licence), bundled with the app, never loaded from Google Fonts. The game uses Borda, which needs a paid licence; Saira is the closest free match. Chosen over Saira Semi Condensed and lighter weights on 6 November 2026.</p>
+  <p class="intro">Saira, tracking −1%: Regular (400) for task text, SemiBold (600) for the Objective label and Continue. Free (SIL Open Font Licence), bundled with the app, never loaded from Google Fonts. The game uses Borda, which needs a paid licence; Saira is the closest free match. Regular body with SemiBold labels chosen on 6 November 2026, after the game's own Manhunt screen: bold labels, regular copy you read.</p>
   <div class="spec">
-    <div><small>Task<br>500 · 48/55 · −0.01em</small><span style="font:500 48px/55px var(--font);letter-spacing:-.01em">Kill Eagle Eye, the Black Tusk bounty in West End.</span></div>
-    <div><small>Objective<br>500 · 24/32 · −0.01em, orange</small><span style="font:500 24px/32px var(--font);letter-spacing:-.01em;color:var(--orange)">Objective 3</span></div>
-    <div><small>Button<br>500 · 24/32 · −0.01em</small><span style="font:500 24px/32px var(--font);letter-spacing:-.01em">Continue</span></div>
+    <div><small>Task<br>400 · 48/55 · −0.01em</small><span style="font:400 48px/55px var(--font);letter-spacing:-.01em">Kill Eagle Eye, the Black Tusk bounty in West End.</span></div>
+    <div><small>Objective<br>600 · 24/32 · −0.01em, orange</small><span style="font:600 24px/32px var(--font);letter-spacing:-.01em;color:var(--orange)">Objective 3</span></div>
+    <div><small>Button<br>600 · 24/32 · −0.01em</small><span style="font:600 24px/32px var(--font);letter-spacing:-.01em">Continue</span></div>
   </div>
   <p class="note">One size for every task, so nothing jumps between steps. Write to fit: a task should stay under about 120 characters, which is nine lines on a phone and still clears the Continue block.</p>
 
@@ -233,7 +233,7 @@ ul.plain li{margin:8px 0}
 <section id="checklist">
   <h2 class="g-h2">Checklist before shipping a change</h2>
   <ul class="plain">
-    <li>One text size, one weight, sentence case, no eyebrows.</li>
+    <li>One text size for tasks, Regular for copy and SemiBold for labels, sentence case, no eyebrows.</li>
     <li>Orange only on Continue and the Objective label.</li>
     <li>Spacing on the 8 px grid, square corners.</li>
     <li>The longest task this week fits above Continue on a phone.</li>

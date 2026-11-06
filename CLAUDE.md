@@ -1,6 +1,6 @@
 # Intel: notes for Claude
 
-Read `docs/style-guide.html` before changing anything visual. Tony's rules: one text size, sentence case, no eyebrows except "Objective N", no grey text, square corners, 8 px grid, UK English, no em dashes.
+Read `docs/style-guide.html` before changing anything visual. Tony's rules: one task text size (Regular, labels SemiBold), sentence case, no eyebrows except "Objective N", no grey text, square corners, 8 px grid, UK English, no em dashes.
 
 ## Writing the week (`weeks/current.json`)
 
