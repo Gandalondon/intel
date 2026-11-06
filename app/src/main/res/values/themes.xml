@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="ground">#FF141414</color>
+    <color name="ground">#FF1C1C1C</color>
     <style name="Theme.Intel" parent="android:Theme.Material.NoActionBar">
         <item name="android:windowBackground">@color/ground</item>
         <item name="android:statusBarColor">@android:color/transparent</item>

@@ -50,11 +50,11 @@ import java.net.HttpURLConnection
 import java.net.URL
 
 // Tokens from docs/style-guide.html
-private val Ground = Color(0xFF141414)
+private val Ground = Color(0xFF1C1C1C)
 private val Ink = Color(0xFFF2EFEA)
 private val Orange = Color(0xFFFF6C10)
-private val OnOrange = Color(0xFF141414)
-private val Saira = FontFamily(Font(R.font.saira_regular, FontWeight.Normal), Font(R.font.saira_semibold, FontWeight.SemiBold))
+private val OnOrange = Color(0xFF1C1C1C)
+private val Saira = FontFamily(Font(R.font.saira_regular, FontWeight.Normal), Font(R.font.saira_medium, FontWeight.Medium))
 
 private const val WEEK_URL = "https://raw.githubusercontent.com/Gandalondon/intel/main/weeks/current.json"
 
@@ -112,7 +112,7 @@ private fun App(ctx: Context) {
 
     val taskStyle = TextStyle(fontFamily = Saira, fontWeight = FontWeight.Normal, fontSize = 48.sp, lineHeight = 55.sp,
         letterSpacing = (-0.01).em, color = Ink, lineBreak = LineBreak.Paragraph)
-    val smallStyle = TextStyle(fontFamily = Saira, fontWeight = FontWeight.SemiBold, fontSize = 24.sp, lineHeight = 32.sp,
+    val smallStyle = TextStyle(fontFamily = Saira, fontWeight = FontWeight.Medium, fontSize = 24.sp, lineHeight = 32.sp,
         letterSpacing = (-0.01).em)
 
     Column(

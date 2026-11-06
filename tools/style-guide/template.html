@@ -13,7 +13,7 @@
 <style>
 {{FONTS}}
 :root{
-  --ground:#141414; --panel:#1E1E1E; --ink:#F2EFEA; --orange:#FF6C10; --on-orange:#141414;
+  --ground:#1C1C1C; --panel:#1E1E1E; --ink:#F2EFEA; --orange:#FF6C10; --on-orange:#1C1C1C;
   --font:"Saira","Helvetica Neue",Arial,system-ui,sans-serif;
   color-scheme:dark;
 }
@@ -75,9 +75,9 @@ ul.plain li{margin:8px 0}
 /* replicas of the app (same values as the prototype) */
 .phone{width:300px;max-width:100%;padding:8px;background:#0A0A0A;border-radius:40px;box-shadow:0 0 0 2px var(--panel)}
 .scr{height:600px;border-radius:32px;background:var(--ground);padding:28px 18px 18px;display:flex;flex-direction:column;overflow:hidden;text-align:left}
-.scr .o{font:600 20px/28px var(--font);letter-spacing:-.01em;color:var(--orange);margin-bottom:8px}
+.scr .o{font:500 20px/28px var(--font);letter-spacing:-.01em;color:var(--orange);margin-bottom:8px}
 .scr .t{flex:1;font:400 36px/41px var(--font);letter-spacing:-.01em;text-wrap:pretty}
-.scr .go{background:var(--orange);color:var(--on-orange);font:600 20px/24px var(--font);letter-spacing:-.01em;text-align:center;padding:14px 20px}
+.scr .go{background:var(--orange);color:var(--on-orange);font:500 20px/24px var(--font);letter-spacing:-.01em;text-align:center;padding:14px 20px}
 .scr.splash{align-items:center;justify-content:center}
 .scr.splash svg{width:120px;height:120px}
 .btn{width:320px;max-width:100%;background:var(--orange);color:var(--on-orange);font:500 24px/32px var(--font);letter-spacing:-.01em;text-align:center;padding:16px 24px}
@@ -89,7 +89,7 @@ ul.plain li{margin:8px 0}
 </head>
 <body>
 <aside class="g-side">
-  <a class="mark" href="#start"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="26" fill="none" stroke="#FF6C10" stroke-width="16"/><rect x="45.5" y="0" width="9" height="100" fill="#141414"/><rect x="0" y="45.5" width="100" height="9" fill="#141414"/></svg><span class="word">Intel</span></a>
+  <a class="mark" href="#start"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="26" fill="none" stroke="#FF6C10" stroke-width="16"/><rect x="45.5" y="0" width="9" height="100" fill="#1C1C1C"/><rect x="0" y="45.5" width="100" height="9" fill="#1C1C1C"/></svg><span class="word">Intel</span></a>
   <nav aria-label="Contents">
     <a href="#start">Start here</a>
     <a href="#foundations">Foundations</a>
@@ -122,19 +122,19 @@ ul.plain li{margin:8px 0}
 
   <h3 class="g-h3">Colour</h3>
   <div class="sw">
-    <div><i style="background:#141414;box-shadow:inset 0 0 0 1px #2A2A2A"></i><b>Ground</b><span>#141414 · <code>--ground</code><br>Every background, the splash, the icon's cuts. A soft black, never #000.</span></div>
+    <div><i style="background:#1C1C1C;box-shadow:inset 0 0 0 1px #2A2A2A"></i><b>Ground</b><span>#1C1C1C · <code>--ground</code><br>Every background, the splash, the icon's cuts. A soft charcoal, never #000. The same charcoal as the footer of Tony's site; chosen on 6 November 2026 so the app and icon sit a step off a black home screen.</span></div>
     <div><i style="background:#F2EFEA"></i><b>Ink</b><span>#F2EFEA · <code>--ink</code><br>All task text. Never greyed down.</span></div>
     <div><i style="background:#FF6C10"></i><b>Orange</b><span>#FF6C10 · <code>--orange</code><br>The Continue block, the Objective label and the icon ring.</span></div>
-    <div><i style="background:#141414;box-shadow:inset 0 0 0 1px #2A2A2A"></i><b>On orange</b><span>#141414 · <code>--on-orange</code><br>The Continue label.</span></div>
+    <div><i style="background:#1C1C1C;box-shadow:inset 0 0 0 1px #2A2A2A"></i><b>On orange</b><span>#1C1C1C · <code>--on-orange</code><br>The Continue label.</span></div>
   </div>
   <p class="note">Candidate: #EF8532, sampled from the game's Commendations screen, is softer and closer to the game's own UI. Not in use yet; see Gaps.</p>
 
   <h3 class="g-h3">Type</h3>
-  <p class="intro">Saira, tracking −1%: Regular (400) for task text, SemiBold (600) for the Objective label and Continue. Free (SIL Open Font Licence), bundled with the app, never loaded from Google Fonts. The game uses Borda, which needs a paid licence; Saira is the closest free match. Regular body with SemiBold labels chosen on 6 November 2026, after the game's own Manhunt screen: bold labels, regular copy you read.</p>
+  <p class="intro">Saira, tracking −1%: Regular (400) for task text, Medium (500) for the Objective label and Continue. Free (SIL Open Font Licence), bundled with the app, never loaded from Google Fonts. The game uses Borda, which needs a paid licence; Saira is the closest free match. Regular copy with Medium labels chosen on 6 November 2026, after the game's own Manhunt screen (heavier labels, regular copy you read). SemiBold was tried and read too heavy on dark.</p>
   <div class="spec">
     <div><small>Task<br>400 · 48/55 · −0.01em</small><span style="font:400 48px/55px var(--font);letter-spacing:-.01em">Kill Eagle Eye, the Black Tusk bounty in West End.</span></div>
-    <div><small>Objective<br>600 · 24/32 · −0.01em, orange</small><span style="font:600 24px/32px var(--font);letter-spacing:-.01em;color:var(--orange)">Objective 3</span></div>
-    <div><small>Button<br>600 · 24/32 · −0.01em</small><span style="font:600 24px/32px var(--font);letter-spacing:-.01em">Continue</span></div>
+    <div><small>Objective<br>500 · 24/32 · −0.01em, orange</small><span style="font:500 24px/32px var(--font);letter-spacing:-.01em;color:var(--orange)">Objective 3</span></div>
+    <div><small>Button<br>500 · 24/32 · −0.01em</small><span style="font:500 24px/32px var(--font);letter-spacing:-.01em">Continue</span></div>
   </div>
   <p class="note">One size for every task, so nothing jumps between steps. Write to fit: a task should stay under about 120 characters, which is nine lines on a phone and still clears the Continue block.</p>
 
@@ -152,11 +152,11 @@ ul.plain li{margin:8px 0}
   <h2 class="g-h2">Logo and app icon</h2>
   <p class="intro">A thick orange ring cut by a black cross into four quarters. Straight vertical and horizontal cuts, nothing angled. A nod to the Division watch ring without copying it. The icon and the splash only: it never appears on the app's screens.</p>
   <div class="board">
-    <div class="ex"><div class="appicon"><svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" fill="#141414"/><circle cx="50" cy="50" r="26" fill="none" stroke="#FF6C10" stroke-width="16"/><rect x="45.5" y="0" width="9" height="100" fill="#141414"/><rect x="0" y="45.5" width="100" height="9" fill="#141414"/></svg></div><small>Launcher (circle)</small></div>
-    <div class="ex"><div class="appicon sm"><svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" fill="#141414"/><circle cx="50" cy="50" r="26" fill="none" stroke="#FF6C10" stroke-width="16"/><rect x="45.5" y="0" width="9" height="100" fill="#141414"/><rect x="0" y="45.5" width="100" height="9" fill="#141414"/></svg></div><small>Home-screen size</small></div>
+    <div class="ex"><div class="appicon"><svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" fill="#1C1C1C"/><circle cx="50" cy="50" r="26" fill="none" stroke="#FF6C10" stroke-width="16"/><rect x="45.5" y="0" width="9" height="100" fill="#1C1C1C"/><rect x="0" y="45.5" width="100" height="9" fill="#1C1C1C"/></svg></div><small>Launcher (circle)</small></div>
+    <div class="ex"><div class="appicon sm"><svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" fill="#1C1C1C"/><circle cx="50" cy="50" r="26" fill="none" stroke="#FF6C10" stroke-width="16"/><rect x="45.5" y="0" width="9" height="100" fill="#1C1C1C"/><rect x="0" y="45.5" width="100" height="9" fill="#1C1C1C"/></svg></div><small>Home-screen size</small></div>
   </div>
   <table class="rules">
-    <tr><th>Geometry</th><td>100-unit square. Ring radius 26, stroke 16. Cuts 9 units wide, through the centre, full height and full width. Ground #141414 behind.</td></tr>
+    <tr><th>Geometry</th><td>100-unit square. Ring radius 26, stroke 16. Cuts 9 units wide, through the centre, full height and full width. Ground #1C1C1C behind.</td></tr>
     <tr><th>Name</th><td>Intel, plain text, sentence case. No wordmark lockup in the app.</td></tr>
     <tr><th>Never</th><td>Ubisoft's or The Division's logos, SHD marks or game art. Angled cuts, gradients, outlines or a second colour on the ring.</td></tr>
   </table>
@@ -166,7 +166,7 @@ ul.plain li{margin:8px 0}
   <h2 class="g-h2">Screens and states</h2>
   <p class="intro">One screen whose text changes. Replicas below use the app's own values.</p>
   <div class="board">
-    <div class="ex"><div class="phone"><div class="scr splash"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="31" fill="none" stroke="#FF6C10" stroke-width="18"/><rect x="45" y="0" width="10" height="100" fill="#141414"/><rect x="0" y="45" width="100" height="10" fill="#141414"/></svg></div></div><small>Launch: the icon on ground, then it fades.</small></div>
+    <div class="ex"><div class="phone"><div class="scr splash"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="31" fill="none" stroke="#FF6C10" stroke-width="18"/><rect x="45" y="0" width="10" height="100" fill="#1C1C1C"/><rect x="0" y="45" width="100" height="10" fill="#1C1C1C"/></svg></div></div><small>Launch: the icon on ground, then it fades.</small></div>
     <div class="ex"><div class="phone"><div class="scr"><div class="o">Objective 1</div><div class="t">Do 3 open-world activities held by Black Tusk: control points, hostage rescues, public executions, broadcasts or convoys.</div><div class="go">Continue</div></div></div><small>A task: the objective number, one block of text, and Continue.</small></div>
     <div class="ex"><div class="phone"><div class="scr"><div class="t">Done. Next intel drops Tuesday.</div></div></div><small>Done: no button.</small></div>
   </div>
@@ -213,8 +213,8 @@ ul.plain li{margin:8px 0}
 <section id="a11y">
   <h2 class="g-h2">Accessibility</h2>
   <table class="rules">
-    <tr><th>Contrast</th><td>Ink on ground 16.1:1. On-orange on orange 6.5:1 (7.1:1 with the candidate #EF8532).</td></tr>
-    <tr><th>Objective label</th><td>Orange on ground 6.5:1.</td></tr>
+    <tr><th>Contrast</th><td>Ink on ground 14.9:1. On-orange on orange 6.0:1.</td></tr>
+    <tr><th>Objective label</th><td>Orange on ground 6.0:1.</td></tr>
     <tr><th>Tap target</th><td>Continue is full width and 64 px tall.</td></tr>
     <tr><th>Screen readers</th><td>The task text is announced when it changes.</td></tr>
   </table>
@@ -233,7 +233,7 @@ ul.plain li{margin:8px 0}
 <section id="checklist">
   <h2 class="g-h2">Checklist before shipping a change</h2>
   <ul class="plain">
-    <li>One text size for tasks, Regular for copy and SemiBold for labels, sentence case, no eyebrows.</li>
+    <li>One text size for tasks, Regular for copy and Medium for labels, sentence case, no eyebrows.</li>
     <li>Orange only on Continue and the Objective label.</li>
     <li>Spacing on the 8 px grid, square corners.</li>
     <li>The longest task this week fits above Continue on a phone.</li>
