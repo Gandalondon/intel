@@ -48,6 +48,10 @@ import kotlinx.coroutines.withContext
 import org.json.JSONObject
 import java.net.HttpURLConnection
 import java.net.URL
+import java.time.DayOfWeek
+import java.time.LocalDate
+import java.time.temporal.ChronoUnit
+import java.time.temporal.TemporalAdjusters
 
 // Tokens from docs/style-guide.html
 private val Ground = Color(0xFF1C1C1C)
@@ -58,13 +62,32 @@ private val Saira = FontFamily(Font(R.font.saira_regular, FontWeight.Normal), Fo
 
 private const val WEEK_URL = "https://raw.githubusercontent.com/Gandalondon/intel/main/weeks/current.json"
 
-data class Week(val id: String, val tasks: List<String>, val done: String)
+// tasks: this week's objectives. finale: the season's final boss, shown after the last objective.
+// next: date the next intel drops (defaults to next Tuesday). ended: replaces the countdown between seasons.
+data class Week(val id: String, val tasks: List<String>, val finale: String?, val next: LocalDate?, val ended: String?)
 
 private fun parse(json: String): Week? = try {
     val o = JSONObject(json)
     val t = o.getJSONArray("tasks")
-    Week(o.getString("id"), List(t.length()) { t.getString(it) }, o.optString("done", "Done. Next intel drops Tuesday."))
+    Week(
+        o.getString("id"), List(t.length()) { t.getString(it) },
+        o.optString("finale").ifBlank { null },
+        o.optString("next").ifBlank { null }?.let { runCatching { LocalDate.parse(it) }.getOrNull() },
+        o.optString("ended").ifBlank { null },
+    )
 } catch (e: Exception) { null }
+
+private fun countdown(next: LocalDate?): String {
+    val today = LocalDate.now()
+    val date = next ?: today.with(TemporalAdjusters.next(DayOfWeek.TUESDAY))
+    val days = ChronoUnit.DAYS.between(today, date)
+    return when {
+        // Drop day reached but the new week is not in yet (guides still decoding, time zones)
+        days <= 0 -> "Collecting intel. Check back later."
+        days == 1L -> "Next intel arriving tomorrow."
+        else -> "Next intel arriving in $days days."
+    }
+}
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -107,7 +130,8 @@ private fun App(ctx: Context) {
     fun go(to: Int) { step = to; prefs.edit().putInt("step", to).apply() }
 
     val w = week
-    val total = w?.tasks?.size ?: 0
+    val steps = w?.let { it.tasks + listOfNotNull(it.finale) } ?: emptyList()
+    val total = steps.size
     BackHandler(enabled = w != null && step > 0) { go(step - 1) }
 
     val taskStyle = TextStyle(fontFamily = Saira, fontWeight = FontWeight.Normal, fontSize = 48.sp, lineHeight = 55.sp,
@@ -124,10 +148,11 @@ private fun App(ctx: Context) {
                 w == null && !failed -> {}
                 w == null -> Text("No intel yet. Connect to the internet and open Intel again.", style = taskStyle)
                 step < total -> {
-                    Text("Objective ${step + 1}", style = smallStyle.copy(color = Orange))
-                    Text(w.tasks[step], style = taskStyle)
+                    val label = if (step < w.tasks.size) "Objective ${step + 1}" else "Final boss"
+                    Text(label, style = smallStyle.copy(color = Orange))
+                    Text(steps[step], style = taskStyle)
                 }
-                else -> Text(w.done, style = taskStyle)
+                else -> Text(w.ended ?: countdown(w.next), style = taskStyle)
             }
         }
         if (w != null && step < total) {
@@ -139,7 +164,7 @@ private fun App(ctx: Context) {
                     .padding(horizontal = 24.dp, vertical = 16.dp),
                 contentAlignment = Alignment.Center
             ) {
-                Text("Continue", style = smallStyle.copy(color = OnOrange), textAlign = TextAlign.Center)
+                Text(if (step == total - 1) "Finish" else "Continue", style = smallStyle.copy(color = OnOrange), textAlign = TextAlign.Center)
             }
         }
     }

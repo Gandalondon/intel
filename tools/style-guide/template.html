@@ -111,7 +111,7 @@ ul.plain li{margin:8px 0}
     <tr><th>The app</th><td>Personal Android app, built from <code>Gandalondon/intel</code>. GitHub builds an APK on every push, which Obtainium installs. Same pipeline as Hugin.</td></tr>
     <tr><th>The content</th><td>One small file per week, rewritten from the week's guides and committed to the repo every Tuesday. The app reads it when it opens, so new tasks never need a new build.</td></tr>
     <tr><th>Source of truth</th><td>The live build wins over this guide. When they disagree, fix the guide.</td></tr>
-    <tr><th>House rules</th><td>UK English. No em dashes. No widows. Sentence case, never all caps. No eyebrows, labels or counters, except "Objective 1, 2, 3", which matches the game so the two can be checked side by side. One typeface, one task size. Spacing on the 8 px grid. £0 to run.</td></tr>
+    <tr><th>House rules</th><td>UK English. No em dashes. No widows. Sentence case, never all caps. No eyebrows, labels or counters, except "Objective 1, 2, 3" and "Final boss", which match the game so the two can be checked side by side. One typeface, one task size. Spacing on the 8 px grid. £0 to run.</td></tr>
     <tr><th>This file</th><td><code>docs/style-guide.html</code>, built by <code>tools/style-guide/make.py</code>. Opens straight in a browser, offline.</td></tr>
   </table>
 </section>
@@ -168,10 +168,13 @@ ul.plain li{margin:8px 0}
   <div class="board">
     <div class="ex"><div class="phone"><div class="scr splash"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="31" fill="none" stroke="#FF6C10" stroke-width="18"/><rect x="45" y="0" width="10" height="100" fill="#1C1C1C"/><rect x="0" y="45" width="100" height="10" fill="#1C1C1C"/></svg></div></div><small>Launch: the icon on ground, then it fades.</small></div>
     <div class="ex"><div class="phone"><div class="scr"><div class="o">Objective 1</div><div class="t">Do 3 open-world activities held by Black Tusk: control points, hostage rescues, public executions, broadcasts or convoys.</div><div class="go">Continue</div></div></div><small>A task: the objective number, one block of text, and Continue.</small></div>
-    <div class="ex"><div class="phone"><div class="scr"><div class="t">Done. Next intel drops Tuesday.</div></div></div><small>Done: no button.</small></div>
+    <div class="ex"><div class="phone"><div class="scr"><div class="o">Final boss</div><div class="t">Take down Bobby Guzmán, the Cleaners boss, at Washington National Airport. Fast travel from the Manhunt tab.</div><div class="go">Finish</div></div></div><small>Final scout only: the season's boss, with Finish.</small></div>
+    <div class="ex"><div class="phone"><div class="scr"><div class="t">Next intel arriving in 3 days.</div></div></div><small>Done: a countdown to the next drop, no button.</small></div>
   </div>
   <table class="rules">
-    <tr><th>Continue</th><td>Marks the task done and shows the next. The only control in the app.</td></tr>
+    <tr><th>Continue</th><td>Marks the task done and shows the next. The only control in the app. On the last step it reads Finish.</td></tr>
+    <tr><th>Final boss</th><td>After a season's last scout, the boss becomes one more step, labelled Final boss, because finishing that scout unlocks the boss straight away.</td></tr>
+    <tr><th>Countdown</th><td>Done reads "Next intel arriving in N days", then "tomorrow". From drop day until the new week lands it reads "Collecting intel. Check back later.", because the guides need time to decode the riddles. Counts to the next drop in the week's file, or the next Tuesday. Between seasons it says the season is over instead.</td></tr>
     <tr><th>Back</th><td>Android's back gesture goes back a step, including from Done. No undo button.</td></tr>
     <tr><th>Reopening</th><td>Opens on the step you reached. A finished week opens straight to Done.</td></tr>
     <tr><th>New week</th><td>When the new week's file arrives, progress resets and task 1 shows.</td></tr>
@@ -201,7 +204,8 @@ ul.plain li{margin:8px 0}
     <li>Do 3 open-world activities held by Black Tusk: control points, hostage rescues, public executions, broadcasts or convoys.</li>
     <li>Finish 1 Invaded Mission. Any main mission where Black Tusk have taken over counts.</li>
     <li>Kill Eagle Eye, the Black Tusk bounty in West End. Take out his drones first.</li>
-    <li>Done: "Done. Next intel drops Tuesday."</li>
+    <li>Final boss: Take down Bobby Guzmán, the Cleaners boss, at Washington National Airport. Fast travel from the Manhunt tab.</li>
+    <li>Then: That's Red Horizon finished. The next season has no start date yet.</li>
   </ul>
 </section>
 
@@ -224,9 +228,7 @@ ul.plain li{margin:8px 0}
   <h2 class="g-h2">Gaps</h2>
   <ul class="plain">
     <li>Orange: keep #FF6C10 or switch to the game's own orange (#EF8532 on Commendations, #F0803E on the Manhunt screen). Undecided.</li>
-    <li>Climax week: the season finale is one mission, not three tasks. Shown as a single step; wording not yet written.</li>
-    <li>Between seasons: what Done says when there is no Manhunt for a while.</li>
-    <li>The icon has four quarters for three tasks. Kept on purpose: the icon does not count.</li>
+        <li>The icon has four quarters for three tasks. Kept on purpose: the icon does not count.</li>
   </ul>
 </section>
 
